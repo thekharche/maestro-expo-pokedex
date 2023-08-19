@@ -1,0 +1,37 @@
+{
+  "expo": {
+    "name": "maestro-expo-pokedex",
+    "slug": "maestro-expo-pokedex",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#000014"
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.thekharche.maestroexpopokedex"
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#000014"
+      },
+      "package": "com.thekharche.maestroexpopokedex"
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "213fa746-d634-4673-bcd0-ef997e0a24c6"
+      }
+    }
+  }
+}
