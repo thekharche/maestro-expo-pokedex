@@ -11,27 +11,18 @@
       "resizeMode": "contain",
       "backgroundColor": "#000014"
     },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
+    "assetBundlePatterns": ["**/*"],
     "ios": {
-      "supportsTablet": true,
-      "bundleIdentifier": "com.thekharche.maestroexpopokedex"
+      "supportsTablet": true
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#000014"
-      },
-      "package": "com.thekharche.maestroexpopokedex"
+      }
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    },
-    "extra": {
-      "eas": {
-        "projectId": "213fa746-d634-4673-bcd0-ef997e0a24c6"
-      }
     }
   }
 }
