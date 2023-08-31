@@ -52,7 +52,7 @@ export function Pokemon() {
   }, []);
 
   useEffect(() => {
-    if (!loadingApi && !loadingImage) {
+    if (!loadingApi) {
       setIsHidden(false);
     }
   }, [loadingApi, loadingImage]);
