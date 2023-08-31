@@ -21,6 +21,12 @@
         "buildType": "apk"
       }
     },
+    "internal-apk": {
+      "distribution": "internal",
+      "android": {
+        "buildType": "apk"
+      }
+    },
     "preview": {
       "distribution": "internal"
     },
