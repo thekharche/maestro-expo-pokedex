@@ -13,8 +13,9 @@ export function Header({ name = "", showInput, handleShowInput }: Header) {
 
   return (
     <View className="flex-row justify-between items-center mb-5">
-      <TouchableOpacity activeOpacity={0.7} onPress={goBack}>
-        <Entypo name="chevron-left" size={24} color="white" />
+      <TouchableOpacity
+        activeOpacity={0.7} onPress={goBack}>
+        <Entypo testID="back" name="chevron-left" size={24} color="white" />
       </TouchableOpacity>
       <Text className="font-600 text-gray-200 text-lg capitalize">{name}</Text>
       {name ? (
