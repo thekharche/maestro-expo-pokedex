@@ -81,7 +81,7 @@ export function List() {
 
           <TextInput
             className="ml-2 flex-1"
-            placeholder="Procurar Pókemon..."
+            placeholder="Search Pókemon..."
             placeholderTextColor="#999999"
             value={search}
             onChangeText={(text) => setSearch(text)}
