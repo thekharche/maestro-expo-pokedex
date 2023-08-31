@@ -1,0 +1,47 @@
+appId: ${APP_ID}
+onFlowStart:
+  - runFlow: ../common/setup.yaml
+  - startRecording: recording-pokemon-lookup-journey
+onFlowComplete:
+  - stopRecording
+---
+- assertVisible: ".*Regions.*"
+- takeScreenshot: "regions"
+
+- assertVisible: ".*Kanto.*"
+- assertVisible: ".*GENERATION.*"
+- tapOn: ".*Kanto.*"
+- tapOn: ".*Kanto.*"
+
+- assertVisible: ".*Kanto.*"
+- takeScreenshot: "kanto-region-pokemon-list-1"
+
+- assertVisible: ".*Bulbasaur.*"
+
+- swipe:
+    direction: UP
+    duration: 4000
+
+- takeScreenshot: "kanto-region-pokemon-list-2"
+
+- tapOn:
+    id: "search-icon"
+- takeScreenshot: "search-pokemon-blank"
+
+- inputText: ${output.search.pokemon_input}
+- takeScreenshot: "search-pokemon-${output.search.pokemon_input}"
+
+- runFlow:
+    when:
+      platform: Android
+    commands:
+      - back
+      
+- tapOn: ${output.search.pokemon_name}
+
+- assertVisible: ".*${output.search.pokemon_name}.*"
+- takeScreenshot: "mewtwo-pokemon-details"
+
+- assertVisible: ".*Genetic.*"
+- assertVisible: ".*Psychic.*"
+- assertVisible: ".*This pokemon does not evolve.*"
