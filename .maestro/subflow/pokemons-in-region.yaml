@@ -7,4 +7,3 @@ appId: ${APP_ID}
     direction: UP
     duration: 4000
 - takeScreenshot: "kanto-region-pokemon-list-2"
-- waitForAnimationToEnd

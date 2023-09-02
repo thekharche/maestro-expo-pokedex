@@ -7,17 +7,3 @@ appId: ${APP_ID}
       visible: "maestro-expo-pokedex on.*"
     commands:
       - tapOn: "maestro-expo-pokedex on.*"
-- runFlow:
-    when:
-      visible: "Got It"
-    commands:
-      - tapOn: "Got It"
-- runFlow:
-    when:
-      visible: "Toggle performance monitor"
-    commands:
-      - swipe:
-          from:
-            text: "Toggle performance monitor"
-          direction: DOWN
-          duration: 4000
