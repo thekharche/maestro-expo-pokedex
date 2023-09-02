@@ -1,0 +1,11 @@
+appId: ${APP_ID}
+---
+- assertVisible: ".*Regions.*"
+- takeScreenshot: "regions"
+- assertVisible:
+    id: "name-kanto"
+- assertVisible:
+    id: "gen-1"
+- tapOn:
+    id: "name-kanto"
+ 

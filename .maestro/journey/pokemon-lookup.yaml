@@ -5,56 +5,14 @@ onFlowStart:
 onFlowComplete:
   - stopRecording
 ---
-- assertVisible: ".*Regions.*"
-- takeScreenshot: "regions"
+# Check Region List
+- runFlow: ../subflow/region-list.yaml
 
-- assertVisible:
-    id: "name-kanto"
-- assertVisible:
-    id: "gen-1"
+# Check Pokemons in a Region
+- runFlow: ../subflow/pokemons-in-region.yaml
 
-- tapOn:
-    id: "name-kanto"
- 
-- assertVisible: ".*Kanto.*"
+# Search for a Pokemon
+- runFlow: ../subflow/search-pokemon.yaml
 
-- takeScreenshot: "kanto-region-pokemon-list-1"
-
-- assertVisible: ".*Bulbasaur.*"
-
-- swipe:
-    direction: UP
-    duration: 4000
-
-- takeScreenshot: "kanto-region-pokemon-list-2"
-- waitForAnimationToEnd
-
-- tapOn:
-    id: "search-icon"
-
-- takeScreenshot: "search-pokemon-blank"
-
-- inputText: ${output.search.pokemon_input}
-- takeScreenshot: "search-pokemon-${output.search.pokemon_input}"
-
-- runFlow:
-    when:
-      platform: Android
-    commands:
-      - back
-
-- runFlow:
-    when:
-      platform: iOS
-    commands:
-      - tapOn: "return"
-
-- tapOn:
-    id: "name-${output.search.pokemon_name}"
-
-- assertVisible: ".*${output.search.pokemon_name}.*"
-- takeScreenshot: "${output.search.pokemon_name}-pokemon-details"
-
-- assertVisible: ".*Genetic.*"
-- assertVisible: ".*Psychic.*"
-- assertVisible: ".*This pokemon does not evolve.*"
+# Check Pokemon Details
+- runFlow: ../subflow/pokemon-details.yaml

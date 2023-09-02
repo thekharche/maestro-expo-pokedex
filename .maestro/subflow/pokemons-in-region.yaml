@@ -1,0 +1,10 @@
+appId: ${APP_ID}
+---
+- assertVisible: ".*Kanto.*"
+- takeScreenshot: "kanto-region-pokemon-list-1"
+- assertVisible: ".*Bulbasaur.*"
+- swipe:
+    direction: UP
+    duration: 4000
+- takeScreenshot: "kanto-region-pokemon-list-2"
+- waitForAnimationToEnd

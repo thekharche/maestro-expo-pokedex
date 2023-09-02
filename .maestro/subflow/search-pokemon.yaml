@@ -1,0 +1,19 @@
+appId: ${APP_ID}
+---
+- tapOn:
+    id: "search-icon"
+- takeScreenshot: "search-pokemon-blank"
+- inputText: ${output.pokemon.input}
+- takeScreenshot: "search-pokemon-${output.pokemon.input}"
+- runFlow:
+    when:
+      platform: Android
+    commands:
+      - back
+- runFlow:
+    when:
+      platform: iOS
+    commands:
+      - tapOn: "return"
+- tapOn:
+    id: "name-${output.pokemon.name}"

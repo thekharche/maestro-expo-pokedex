@@ -1,4 +1,4 @@
-output.search = {
-    pokemon_name: 'mewtwo',
-    pokemon_input: 'mewtw',
+output.pokemon = {
+    name: 'mewtwo',
+    input: 'mewtw',
 }

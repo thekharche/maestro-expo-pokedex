@@ -1,0 +1,7 @@
+appId: ${APP_ID}
+---
+- assertVisible: ".*${output.pokemon.name}.*"
+- takeScreenshot: "${output.pokemon.name}-pokemon-details"
+- assertVisible: ".*Genetic.*"
+- assertVisible: ".*Psychic.*"
+- assertVisible: ".*This pokemon does not evolve.*"
