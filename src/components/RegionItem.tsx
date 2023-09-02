@@ -23,7 +23,7 @@ export function RegionItem({ name, gen, listStart }: RegionItemProps) {
     <TouchableOpacity
       activeOpacity={0.8}
       className="w-full"
-      accessible={false} 
+      accessible={false}
       onPress={() => navigate("list", { name, gen })}
     >
       <ImageBackground source={imageSource} imageStyle={{ borderRadius: 16 }}>
@@ -34,10 +34,10 @@ export function RegionItem({ name, gen, listStart }: RegionItemProps) {
           colors={["rgba(0,0,0,.7)", "transparent"]}
         >
           <View>
-            <Text className="font-600 text-lg text-white capitalize">
+            <Text testID={`name-${name}`} className="font-600 text-lg text-white capitalize">
               {name}
             </Text>
-            <Text className="font-500 text-xs text-gray-200 uppercase">
+            <Text testID={`gen-${gen}`} className="font-500 text-xs text-gray-200 uppercase">
               {gen}ª Generation
             </Text>
           </View>

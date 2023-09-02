@@ -8,14 +8,16 @@ onFlowComplete:
 - assertVisible: ".*Regions.*"
 - takeScreenshot: "regions"
 
-- assertVisible: ".*Kanto.*"
-- assertVisible: ".*GENERATION.*"
+- assertVisible:
+    id: "name-kanto"
+- assertVisible:
+    id: "gen-1"
 
-- waitForAnimationToEnd
-
-- tapOn: "Kanto 1ª GENERATION"
+- tapOn:
+    id: "name-kanto"
  
 - assertVisible: ".*Kanto.*"
+
 - takeScreenshot: "kanto-region-pokemon-list-1"
 
 - assertVisible: ".*Bulbasaur.*"
@@ -29,6 +31,7 @@ onFlowComplete:
 
 - tapOn:
     id: "search-icon"
+
 - takeScreenshot: "search-pokemon-blank"
 
 - inputText: ${output.search.pokemon_input}
@@ -46,11 +49,11 @@ onFlowComplete:
     commands:
       - tapOn: "return"
 
-# - tapOn: ".*${output.search.pokemon_name}.*"
-- tapOn: "Nº150 Mewtwo"
+- tapOn:
+    id: "name-${output.search.pokemon_name}"
 
 - assertVisible: ".*${output.search.pokemon_name}.*"
-- takeScreenshot: "mewtwo-pokemon-details"
+- takeScreenshot: "${output.search.pokemon_name}-pokemon-details"
 
 - assertVisible: ".*Genetic.*"
 - assertVisible: ".*Psychic.*"
