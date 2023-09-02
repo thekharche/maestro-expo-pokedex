@@ -20,10 +20,11 @@ export function PokemonItem({ name, url }: PokemonListProps) {
           ? Alert.alert("Oh snap!", "Parece que esse pokemon escapou.")
           : navigate("pokemon", { name, pokemonId, formatedId })
       }
+      accessible={false}  // set accessible to false here
     >
-      <View>
-        <Text className="font-600 text-gray-200 text-xs">{formatedId}</Text>
-        <Text className="font-600 text-white text-xl capitalize">{name}</Text>
+      <View accessible={true}>  
+        <Text testID="formattedId" className="font-600 text-gray-200 text-xs">{formatedId}</Text>
+        <Text testID="name" className="font-600 text-white text-xl capitalize">{name}</Text>
       </View>
       <PokemonImage pokemonId={Number(pokemonId)} />
     </TouchableOpacity>
