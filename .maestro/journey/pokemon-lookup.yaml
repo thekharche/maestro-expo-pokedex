@@ -10,9 +10,11 @@ onFlowComplete:
 
 - assertVisible: ".*Kanto.*"
 - assertVisible: ".*GENERATION.*"
-- tapOn: ".*Kanto.*"
-- tapOn: ".*Kanto.*"
 
+- waitForAnimationToEnd
+
+- tapOn: "Kanto 1ª GENERATION"
+ 
 - assertVisible: ".*Kanto.*"
 - takeScreenshot: "kanto-region-pokemon-list-1"
 
@@ -23,6 +25,7 @@ onFlowComplete:
     duration: 4000
 
 - takeScreenshot: "kanto-region-pokemon-list-2"
+- waitForAnimationToEnd
 
 - tapOn:
     id: "search-icon"
@@ -36,8 +39,15 @@ onFlowComplete:
       platform: Android
     commands:
       - back
-      
-- tapOn: ${output.search.pokemon_name}
+
+- runFlow:
+    when:
+      platform: iOS
+    commands:
+      - tapOn: "return"
+
+# - tapOn: ".*${output.search.pokemon_name}.*"
+- tapOn: "Nº150 Mewtwo"
 
 - assertVisible: ".*${output.search.pokemon_name}.*"
 - takeScreenshot: "mewtwo-pokemon-details"
