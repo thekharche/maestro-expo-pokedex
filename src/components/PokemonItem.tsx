@@ -23,8 +23,8 @@ export function PokemonItem({ name, url }: PokemonListProps) {
       accessible={false}  // set accessible to false here
     >
       <View>  
-        <Text testID="formattedId" className="font-600 text-gray-200 text-xs">{formatedId}</Text>
-        <Text testID="name" className="font-600 text-white text-xl capitalize">{name}</Text>
+        <Text testID={`id-${formatedId}`} className="font-600 text-gray-200 text-xs">{formatedId}</Text>
+        <Text testID={`name-${name}`} className="font-600 text-white text-xl capitalize">{name}</Text>
       </View>
       <PokemonImage pokemonId={Number(pokemonId)} />
     </TouchableOpacity>
