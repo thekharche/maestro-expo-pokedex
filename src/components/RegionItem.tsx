@@ -23,6 +23,7 @@ export function RegionItem({ name, gen, listStart }: RegionItemProps) {
     <TouchableOpacity
       activeOpacity={0.8}
       className="w-full"
+      accessible={false} 
       onPress={() => navigate("list", { name, gen })}
     >
       <ImageBackground source={imageSource} imageStyle={{ borderRadius: 16 }}>
