@@ -1,7 +1,11 @@
 appId: ${APP_ID}
 ---
-- tapOn:
-    id: "search-icon"
+- repeat:
+    while:
+      notVisible: "Search Pókemon..."
+    commands:
+      - tapOn:
+          id: "search-icon"
 - takeScreenshot: "search-pokemon-blank"
 - inputText: ${output.pokemon.input}
 - takeScreenshot: "search-pokemon-${output.pokemon.input}"
