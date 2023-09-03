@@ -1,9 +1,23 @@
 appId: ${APP_ID}
 ---
-- launchApp
+- launchApp:
+    clearState: true
 - runScript: init.js
 - runFlow:
     when:
-      visible: "maestro-expo-pokedex on.*"
+      visible: "http://localhost:8081"
     commands:
-      - tapOn: "maestro-expo-pokedex on.*"
+      - tapOn: "http://localhost:8081"
+- runFlow:
+    when:
+      visible: "Got It"
+    commands:
+      - tapOn: "Got It"
+- runFlow:
+    when:
+      visible: "Toggle performance monitor"
+    commands:
+      - swipe:
+          from:
+            text: "Toggle performance monitor"
+          direction: DOWN
