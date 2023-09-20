@@ -2,7 +2,7 @@
 
 # Check if the environment is local
 if [ "$ENV_TYPE" = "local" ]; then
-    echo "hello"
+    echo "this is local environment"
     exit 0
 fi
 
