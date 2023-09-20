@@ -11,6 +11,11 @@ appId: ${APP_ID}
 - takeScreenshot: "search-pokemon-${output.pokemon.input}"
 - runFlow:
     when:
+      visible: ".*continue.*"
+    commands:
+      - tapOn: ".*continue.*"
+- runFlow:
+    when:
       platform: Android
     commands:
       - back

@@ -1,8 +1,7 @@
 appId: ${APP_ID}
 ---
-- launchApp:
-    clearState: true
-- runScript: init.js
+
+- startRecording: recording-pokemon-lookup-journey
 - runFlow:
     when:
       visible: "http://localhost:8081"

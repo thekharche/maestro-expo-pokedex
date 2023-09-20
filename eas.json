@@ -14,6 +14,12 @@
         "simulator": true
       }
     },
+    "internal-simulator": {
+      "distribution": "internal",
+      "ios": {
+        "simulator": true
+      }
+    },
     "development-android": {
       "developmentClient": true,
       "distribution": "internal",
@@ -35,5 +41,4 @@
   "submit": {
     "production": {}
   }
-  
 }

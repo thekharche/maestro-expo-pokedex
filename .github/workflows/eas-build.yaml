@@ -1,0 +1,38 @@
+name: EAS Builds
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  eas-build:
+    name: Maestro Cloud tests for Expo EAS
+    timeout-minutes: 15
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Setup Repository
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18.x
+          cache: "npm"
+
+      - name: Setup EAS
+        uses: expo/expo-github-action@v8
+        with:
+          eas-version: latest
+          token: ${{ secrets.EXPO_TOKEN }}
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Build Request for Android
+        run: eas build --platform android --non-interactive --no-wait --profile internal-apk
+        shell: bash
+
+      - name: Build Request for iOS
+        run: eas build --platform ios --non-interactive --no-wait --profile internal-simulator
+        shell: bash

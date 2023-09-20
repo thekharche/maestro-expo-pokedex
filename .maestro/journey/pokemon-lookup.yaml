@@ -1,10 +1,15 @@
 appId: ${APP_ID}
-onFlowStart:
-  - runFlow: ../common/setup.yaml
-  - startRecording: recording-pokemon-lookup-journey
-onFlowComplete:
-  - stopRecording
 ---
+- launchApp:
+    clearState: true
+
+- runScript: ../common/init.js
+
+- runFlow:
+    when:
+      true: ${TARGET_ENV == 'local'}
+    file: ../common/local-setup.yaml
+
 # Check Region List
 - runFlow: ../subflow/region-list.yaml
 
