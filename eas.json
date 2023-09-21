@@ -20,7 +20,7 @@
         "simulator": true
       }
     },
-    "development-android": {
+    "development-apk": {
       "developmentClient": true,
       "distribution": "internal",
       "android": {
